@@ -93,6 +93,38 @@ function estatein_default_menu() {
     echo '</ul>';
 }
 
+// Custom comment template
+function estatein_custom_comment($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment;
+    ?>
+    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>" style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #262626;">
+        <div id="comment-<?php comment_ID(); ?>" class="comment-body" style="display: flex; gap: 20px;">
+            <div class="comment-author-avatar">
+                <?php echo get_avatar($comment, 50, '', '', array('style' => 'border-radius: 50%;')); ?>
+            </div>
+            <div class="comment-content-wrap" style="flex-grow: 1;">
+                <div class="comment-meta" style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <b class="fn" style="color: #fff; font-size: 16px;"><?php echo get_comment_author_link(); ?></b>
+                    <div class="comment-metadata" style="font-size: 12px; color: #999;">
+                        <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" style="color: #999; text-decoration: none;">
+                            <?php printf('%1$s at %2$s', get_comment_date(), get_comment_time()); ?>
+                        </a>
+                    </div>
+                </div>
+                <div class="comment-content" style="color: #e6e6e6; line-height: 1.6; margin-bottom: 12px;">
+                    <?php comment_text(); ?>
+                </div>
+                <div class="reply" style="font-size: 14px;">
+                    <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => 'Reply &darr;'))); ?>
+                </div>
+                <?php if ($comment->comment_approved == '0') : ?>
+                    <em style="color: #ffc107; font-size: 12px; display: block; margin-top: 8px;">Your comment is awaiting moderation.</em>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php
+}
+
 // Auto-create Dashboard page on theme activation or init
 function estatein_create_dashboard_page() {
     $page_slug = 'dashboard';

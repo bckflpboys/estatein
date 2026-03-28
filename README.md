@@ -1,195 +1,90 @@
-# Estatein WordPress Theme
+# Estatein - Custom WordPress Theme
 
-A modern, responsive WordPress theme for real estate websites, built based on the Figma design specification.
+Estatein is a modern, fully responsive WordPress theme custom-built for real estate agencies. It was developed from scratch based on a provided Figma design, transforming static HTML/CSS into a dynamic, content-manageable WordPress experience.
 
-## Features
+---
 
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **Modern UI**: Dark theme with purple accents matching the Figma design
-- **Custom Post Types**: Properties and Services with custom fields
-- **Interactive Elements**: Smooth animations, hover effects, and functional forms
-- **SEO Optimized**: Clean code structure with proper semantic HTML5
-- **Performance Optimized**: Efficient CSS and JavaScript with lazy loading
-- **WordPress Best Practices**: Follows WordPress coding standards
+## 🚀 Key Features Implemented
 
-## Theme Structure
+- **Pixel-Perfect UI:** A sleek, dark-themed UI with purple accents (`#703BF7`), matching the original Figma specifications perfectly.
+- **Frontend Author Dashboard:** A custom-built, secure frontend dashboard (`/dashboard`) allowing authorized users to write, edit, delete, and publish blog posts without ever seeing the WordPress admin backend.
+- **Advanced Blog Functionality:** 
+  - Dynamic blog archive grid.
+  - Single post templates with category tags, author meta, and robust comment sections.
+  - Support for uploading local Cover Images or linking external Image URLs.
+- **Custom Post Types:** Native WordPress CPTs registered for **Properties** and **Services** to keep content organized and separate from standard blog posts.
+- **Fully Responsive:** Mobile-first approach using CSS media queries to ensure the site looks stunning on phones, tablets, and desktops.
+- **SEO & Performance:** 
+  - Dynamic Open Graph (OG) meta tags for social sharing.
+  - Deferred JavaScript loading for faster initial page renders.
+  - Clean, semantic HTML5 structure.
+
+---
+
+## 🛠️ Development Process & Technical Choices
+
+### 1. Theme Architecture
+The theme was built from the ground up without relying on heavy starter themes (like Bootstrap or Underscores) to ensure maximum performance and strictly adhere to the Figma design. 
+- **`style.css`**: Contains all custom styling, organized clearly without bloated frameworks.
+- **`functions.php`**: Acts as the engine room, registering menus, enqueuing scripts (with `defer` attributes), registering Custom Post Types, and handling custom comment UI rendering.
+
+### 2. Frontend Dashboard Strategy
+Instead of forcing clients to use the complex `wp-admin` panel, a custom page template (`page-dashboard.php`) was engineered. 
+- It uses native WordPress functions (`wp_insert_post`, `wp_update_post`, `wp_trash_post`) combined with secure Nonce fields to safely process form submissions on the frontend.
+- It seamlessly integrates `wp_login_form()` to handle authentication on the page.
+
+### 3. Content Management (Recommended Plugins)
+While the theme registers Custom Post Types natively, it is highly recommended to install the **Advanced Custom Fields (ACF)** plugin. 
+- **Why?** ACF provides an intuitive way to add specific data fields (Price, Bedrooms, Bathrooms, Location) to the "Properties" post type without hardcoding custom meta boxes, giving the client an incredibly easy-to-manage backend experience.
+
+---
+
+## 📂 Codebase Structure
 
 ```
 estatein/
-├── style.css                 # Main stylesheet with theme header
-├── index.php                 # Homepage template
-├── header.php                # Header with navigation
-├── footer.php                # Footer with links
-├── functions.php             # Theme functions and setup
-├── page-about.php            # About page template
-├── page-contact.php          # Contact page template
-├── page-properties.php       # Properties listing page
-├── single-property.php       # Single property page
-├── screenshot.png           # Theme screenshot
-├── assets/
-│   ├── js/
-│   │   └── script.js        # Main JavaScript file
-│   └── images/              # Image assets
-└── README.md               # This file
+├── style.css                 # Main stylesheet and core UI design
+├── front-page.php            # Static Homepage template
+├── index.php                 # Blog archive (The Loop)
+├── single.php                # Single blog post template
+├── page-dashboard.php        # Custom frontend Author Dashboard
+├── header.php                # Global header, navigation, and SEO meta tags
+├── footer.php                # Global footer
+├── functions.php             # Theme setup, CPTs, and custom PHP logic
+├── comments.php              # Custom dark-themed comment section
+└── assets/
+    ├── js/script.js          # Interactive frontend logic
+    └── images/               # Local image assets
 ```
 
-## Installation
+---
 
-1. Upload the `estatein` folder to your WordPress `wp-content/themes/` directory
-2. Activate the theme in WordPress admin under Appearance > Themes
-3. Configure the theme options under Appearance > Theme Options
+## 💻 Local Setup & Installation Guide
 
-## Custom Post Types
+To run this theme locally and test the functionality, follow these steps:
 
-### Properties
-- **Fields**: Price, Location, Bedrooms, Bathrooms, Area, Status, Type, Year Built
-- **Archive**: `/properties/`
-- **Single**: Custom single property template with gallery and inquiry form
+### Prerequisites
+You will need a local WordPress environment. We highly recommend [Local by Flywheel](https://localwp.com/) as it is the easiest to set up.
 
-### Services
-- **Fields**: Service description, icon, features
-- **Archive**: `/services/`
-- **Usage**: Displayed on services page and throughout the site
+### Step 1: Install WordPress
+1. Open **Local**, click the **+** button to create a new site.
+2. Name the site `estatein` and set up your WordPress Admin username and password.
+3. Wait for Local to provision the site and start the server.
 
-## Theme Features
+### Step 2: Install the Theme
+1. Navigate to the `wp-content/themes/` directory of your new local site.
+2. Copy the entire `estatein` folder from this repository into the `themes` directory.
+3. Open your local site's WordPress Admin dashboard (`http://estatein.local/wp-admin`).
+4. Go to **Appearance > Themes** and activate the **Estatein** theme.
 
-### Navigation Menus
-- **Primary Menu**: Main navigation (Home, About, Properties, Services)
-- **Footer Menu**: Secondary navigation in footer
+### Step 3: Configure Settings
+1. **Permalinks:** Go to **Settings > Permalinks** and select **Post name**. Click Save. (This ensures your `/dashboard` and `/blog` URLs work correctly).
+2. **Homepage:** Go to **Settings > Reading**. Under "Your homepage displays", select **A static page**. Set the Homepage to your "Home" page, and the Posts page to a "Blog" page.
+3. **Dashboard:** The theme automatically creates a "Dashboard" page upon activation. You can visit `http://estatein.local/dashboard` to see the custom frontend publisher in action.
 
-### Widget Areas
-- **Footer Widgets**: Widget area for footer content
-
-### Customizer Options
-- **Primary Color**: Customize the theme's primary accent color
-- **Site Identity**: Logo, title, and tagline settings
-
-## Page Templates
-
-### Homepage (index.php)
-- Hero section with call-to-action
-- Statistics cards
-- Feature cards
-- Fully responsive design
-
-### Properties Page (page-properties.php)
-- Property filtering by type, price, and location
-- Grid layout with property cards
-- Pagination support
-- Search functionality
-
-### About Page (page-about.php)
-- Company information and mission
-- Team member profiles
-- Client testimonials
-- Company statistics
-
-### Contact Page (page-contact.php)
-- Contact form with validation
-- Office information and hours
-- Interactive map placeholder
-- FAQ section
-
-### Single Property (single-property.php)
-- Image gallery
-- Property details and features
-- Agent information
-- Mortgage calculator
-- Similar properties section
-
-## JavaScript Features
-
-- **Smooth Scrolling**: Anchor link smooth scrolling
-- **Form Validation**: Contact and inquiry form validation
-- **Image Lazy Loading**: Performance optimization for images
-- **Counter Animation**: Animated statistics counters
-- **Gallery Lightbox**: Image gallery with lightbox functionality
-- **Mobile Menu**: Responsive mobile navigation
-- **Scroll Effects**: Header scroll effects and element animations
-
-## CSS Features
-
-- **Responsive Grid**: CSS Grid and Flexbox for layouts
-- **Smooth Transitions**: Hover effects and animations
-- **Mobile-First**: Mobile-first responsive design
-- **Custom Properties**: CSS variables for easy customization
-- **Optimized Performance**: Efficient CSS organization
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance Optimization
-
-- **Minified Assets**: Optimized CSS and JavaScript
-- **Image Optimization**: Lazy loading and proper sizing
-- **Caching Ready**: Compatible with caching plugins
-- **SEO Friendly**: Proper meta tags and semantic HTML
-
-## Customization
-
-### Colors
-The theme uses CSS custom properties for colors. You can modify them in `style.css`:
-
-```css
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #8b5cf6;
-    --background-color: #0a0a0a;
-    --text-color: #ffffff;
-    --text-muted: #a0a0a0;
-}
-```
-
-### Typography
-The theme uses Inter font family. You can modify font settings in the CSS variables.
-
-### Layout
-The theme uses CSS Grid and Flexbox. Breakpoints are:
-- Mobile: < 768px
-- Tablet: 768px - 1024px
-- Desktop: > 1024px
-
-## Development
-
-### File Organization
-- Follow WordPress coding standards
-- Use semantic HTML5 elements
-- Implement proper accessibility (ARIA labels, etc.)
-- Use WordPress functions and hooks appropriately
-
-### JavaScript
-- Use jQuery for compatibility
-- Implement proper event handling
-- Follow WordPress JavaScript standards
-- Use non-blocking script loading
-
-### PHP
-- Follow WordPress PHP coding standards
-- Use proper security practices (nonce verification, data sanitization)
-- Implement WordPress hooks and filters
-- Use WordPress template hierarchy
-
-## License
-
-This theme is licensed under the GNU General Public License v2 or later.
-
-## Support
-
-For support and questions:
-- Check the WordPress codex
-- Review the theme documentation
-- Contact the development team
-
-## Changelog
-
-### Version 1.0.0
-- Initial release
-- Responsive design implementation
-- Custom post types for Properties and Services
-- Interactive JavaScript features
-- Full WordPress theme functionality
+### Step 4: Test the Features
+- Visit the site frontend.
+- Click on **Dashboard** in the top menu.
+- Log in using the credentials you created in Step 1.
+- Create a new blog post, add a Cover Image URL, and publish it.
+- Navigate to the **Blog** page to see your post live, click into it, and test out the custom comment section!

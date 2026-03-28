@@ -43,9 +43,15 @@ get_header();
                     </div>
                 </header>
                 
-                <?php if ( has_post_thumbnail() ) : ?>
+                <?php 
+                $cover_url = get_post_meta(get_the_ID(), '_cover_image_url', true);
+                if ( has_post_thumbnail() || !empty($cover_url) ) : ?>
                     <div class="post-thumbnail" style="margin-bottom: 40px; border-radius: 12px; overflow: hidden; border: 1px solid #262626;">
-                        <?php the_post_thumbnail('full', ['style' => 'width: 100%; height: auto; display: block;']); ?>
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <?php the_post_thumbnail('full', ['style' => 'width: 100%; height: auto; display: block;']); ?>
+                        <?php else : ?>
+                            <img src="<?php echo esc_url($cover_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" style="width: 100%; height: auto; display: block;">
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 

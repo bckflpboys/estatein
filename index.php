@@ -33,18 +33,30 @@ get_header();
                     ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('blog-card'); ?> style="background-color: #1a1a1a; border: 1px solid #262626; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
                         
-                        <?php if ( has_post_thumbnail() ) : ?>
+                        <?php 
+                        $cover_url = get_post_meta(get_the_ID(), '_cover_image_url', true);
+                        if ( has_post_thumbnail() || !empty($cover_url) ) : ?>
                             <div class="blog-thumbnail" style="width: 100%; height: 240px; overflow: hidden;">
                                 <a href="<?php the_permalink(); ?>">
-                                    <?php the_post_thumbnail('large', ['style' => 'width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;']); ?>
+                                    <?php if ( has_post_thumbnail() ) : ?>
+                                        <?php the_post_thumbnail('large', ['style' => 'width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;']); ?>
+                                    <?php else : ?>
+                                        <img src="<?php echo esc_url($cover_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                    <?php endif; ?>
                                 </a>
                             </div>
                         <?php endif; ?>
                         
                         <div class="blog-content" style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
-                            <div class="blog-meta" style="font-size: 14px; color: #999; margin-bottom: 12px; display: flex; gap: 16px;">
+                            <div class="blog-meta" style="font-size: 14px; color: #999; margin-bottom: 12px; display: flex; gap: 16px; flex-wrap: wrap;">
                                 <span class="blog-date"><?php echo get_the_date(); ?></span>
                                 <span class="blog-author">By <?php the_author(); ?></span>
+                                <?php 
+                                $categories = get_the_category();
+                                if ( ! empty( $categories ) ) {
+                                    echo '<span class="blog-cat" style="color: #703BF7;">' . esc_html( $categories[0]->name ) . '</span>';
+                                }
+                                ?>
                             </div>
                             
                             <h2 class="blog-title" style="font-size: 20px; margin-bottom: 16px; line-height: 1.4;">
