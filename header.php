@@ -3,6 +3,13 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?php echo is_single() ? esc_attr(wp_strip_all_tags(get_the_excerpt())) : get_bloginfo('description'); ?>">
+    <meta property="og:title" content="<?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?>">
+    <meta property="og:description" content="<?php echo is_single() ? esc_attr(wp_strip_all_tags(get_the_excerpt())) : get_bloginfo('description'); ?>">
+    <meta property="og:url" content="<?php echo esc_url(home_url($_SERVER['REQUEST_URI'])); ?>">
+    <?php if (is_single() && has_post_thumbnail()) : ?>
+        <meta property="og:image" content="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>">
+    <?php endif; ?>
     <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
@@ -40,10 +47,12 @@
                 
                 <nav>
                     <ul class="primary-menu">
-                        <li><a href="<?php echo home_url('/'); ?>" class="active">Home</a></li>
-                        <li><a href="<?php echo home_url('/about'); ?>">About Us</a></li>
-                        <li><a href="<?php echo home_url('/properties'); ?>">Properties</a></li>
-                        <li><a href="<?php echo home_url('/services'); ?>">Services</a></li>
+                        <li><a href="<?php echo home_url('/'); ?>" class="<?php echo is_front_page() ? 'active' : ''; ?>">Home</a></li>
+                        <li><a href="<?php echo home_url('/about'); ?>" class="<?php echo is_page('about') ? 'active' : ''; ?>">About Us</a></li>
+                        <li><a href="<?php echo home_url('/properties'); ?>" class="<?php echo is_post_type_archive('property') ? 'active' : ''; ?>">Properties</a></li>
+                        <li><a href="<?php echo home_url('/services'); ?>" class="<?php echo is_post_type_archive('service') ? 'active' : ''; ?>">Services</a></li>
+                        <li><a href="<?php echo home_url('/blog'); ?>" class="<?php echo (is_home() || is_single()) ? 'active' : ''; ?>">Blog</a></li>
+                        <li><a href="<?php echo home_url('/dashboard'); ?>" class="<?php echo is_page('dashboard') ? 'active' : ''; ?>">Dashboard</a></li>
                     </ul>
                 </nav>
                 

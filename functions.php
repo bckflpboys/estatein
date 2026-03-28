@@ -1,5 +1,39 @@
 <?php
 
+// Add basic SEO and Performance enhancements
+function estatein_performance_setup() {
+    // Add default posts and comments RSS feed links to head
+    add_theme_support('automatic-feed-links');
+    
+    // Enable support for Post Thumbnails on posts and pages
+    add_theme_support('post-thumbnails');
+    
+    // Enable support for title tag
+    add_theme_support('title-tag');
+    
+    // Enable support for HTML5 semantic markup
+    add_theme_support('html5', array(
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+        'style',
+        'script',
+    ));
+}
+add_action('after_setup_theme', 'estatein_performance_setup');
+
+// Defer parsing of JavaScript for performance
+function estatein_defer_scripts($tag, $handle) {
+    if (is_admin()) return $tag;
+    if (strpos($tag, 'estatein-script') !== false) {
+        return str_replace(' src', ' defer="defer" src', $tag);
+    }
+    return $tag;
+}
+add_filter('script_loader_tag', 'estatein_defer_scripts', 10, 2);
+
 // Theme Setup
 function estatein_theme_setup() {
     // Add default posts and comments RSS feed links to head
@@ -47,15 +81,40 @@ function estatein_scripts() {
 }
 add_action('wp_enqueue_scripts', 'estatein_scripts');
 
-// Default menu fallback
+    // Default menu fallback
 function estatein_default_menu() {
     echo '<ul class="primary-menu">';
     echo '<li><a href="' . home_url('/') . '">Home</a></li>';
     echo '<li><a href="' . home_url('/about') . '">About Us</a></li>';
     echo '<li><a href="' . home_url('/properties') . '">Properties</a></li>';
     echo '<li><a href="' . home_url('/services') . '">Services</a></li>';
+    echo '<li><a href="' . home_url('/blog') . '">Blog</a></li>';
+    echo '<li><a href="' . home_url('/dashboard') . '">Dashboard</a></li>';
     echo '</ul>';
 }
+
+// Auto-create Dashboard page on theme activation or init
+function estatein_create_dashboard_page() {
+    $page_slug = 'dashboard';
+    $page_title = 'Dashboard';
+    
+    // Check if page exists
+    $page = get_page_by_path($page_slug);
+    
+    if (!$page) {
+        $page_id = wp_insert_post(array(
+            'post_title'     => $page_title,
+            'post_name'      => $page_slug,
+            'post_status'    => 'publish',
+            'post_type'      => 'page',
+        ));
+        
+        if ($page_id && !is_wp_error($page_id)) {
+            update_post_meta($page_id, '_wp_page_template', 'page-dashboard.php');
+        }
+    }
+}
+add_action('after_setup_theme', 'estatein_create_dashboard_page');
 
 // Custom Post Types
 function estatein_custom_post_types() {
