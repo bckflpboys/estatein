@@ -128,4 +128,141 @@
     </div>
 </section>
 
+<section class="featured-properties" id="properties">
+    <div class="container">
+        <div class="featured-header">
+            <div class="featured-title-wrap">
+                <div class="sparkles">
+                    <span class="sparkle"></span>
+                    <span class="sparkle small"></span>
+                </div>
+                <h2>Featured Properties</h2>
+                <p>Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click 'View Details' for more information.</p>
+            </div>
+            <a href="<?php echo get_permalink(get_page_by_path('properties')); ?>" class="btn btn-outline">View All Properties</a>
+        </div>
+        <div class="property-grid">
+            <article class="property-card">
+                <div class="property-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/card1.png" alt="Seaside Serenity Villa">
+                </div>
+                <div class="property-body">
+                    <h3 class="property-title">Seaside Serenity Villa</h3>
+                    <p class="property-desc">A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood. <a href="#" class="read-more">Read More</a></p>
+                    <div class="property-tags">
+                        <span class="tag">
+                            <span class="tag-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 21V8l8-6 8 6v13" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            4-Bedroom
+                        </span>
+                        <span class="tag">
+                            <span class="tag-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 10h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            3-Bathroom
+                        </span>
+                        <span class="tag">
+                            <span class="tag-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16"><rect x="4" y="10" width="16" height="10" rx="2" ry="2" stroke="#ffffff" stroke-width="1.5" fill="none"/><path d="M8 10V6h8v4" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                            </span>
+                            Villa
+                        </span>
+                    </div>
+                    <div class="property-footer">
+                        <div class="price">
+                            <div class="price-label">Price</div>
+                            <div class="price-value">$550,000</div>
+                        </div>
+                        <a href="#" class="btn btn-purple">View Property Details</a>
+                    </div>
+                </div>
+            </article>
+            <article class="property-card">
+                <div class="property-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/card2.png" alt="Metropolitan Haven">
+                </div>
+                <div class="property-body">
+                    <h3 class="property-title">Metropolitan Haven</h3>
+                    <p class="property-desc">A chic and fully-furnished 2-bedroom apartment with panoramic city views. <a href="#" class="read-more">Read More</a></p>
+                    <div class="property-tags">
+                        <span class="tag">
+                            <span class="tag-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 21V8l8-6 8 6v13" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            2-Bedroom
+                        </span>
+                        <span class="tag">
+                            <span class="tag-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 10h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            2-Bathroom
+                        </span>
+                        <span class="tag">
+                            <span class="tag-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16"><rect x="4" y="10" width="16" height="10" rx="2" ry="2" stroke="#ffffff" stroke-width="1.5" fill="none"/><path d="M8 10V6h8v4" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                            </span>
+                            Villa
+                        </span>
+                    </div>
+                    <div class="property-footer">
+                        <div class="price">
+                            <div class="price-label">Price</div>
+                            <div class="price-value">$550,000</div>
+                        </div>
+                        <a href="#" class="btn btn-purple">View Property Details</a>
+                    </div>
+                </div>
+            </article>
+            <article class="property-card">
+                <div class="property-image with-gradient">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/card3.png" alt="Rustic Retreat Cottage">
+                </div>
+                <div class="property-body">
+                    <h3 class="property-title">Rustic Retreat Cottage</h3>
+                    <p class="property-desc">An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community. <a href="#" class="read-more">Read More</a></p>
+                    <div class="property-tags">
+                        <span class="tag">
+                            <span class="tag-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 21V8l8-6 8 6v13" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            3-Bedroom
+                        </span>
+                        <span class="tag">
+                            <span class="tag-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 10h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            3-Bathroom
+                        </span>
+                        <span class="tag">
+                            <span class="tag-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16"><rect x="4" y="10" width="16" height="10" rx="2" ry="2" stroke="#ffffff" stroke-width="1.5" fill="none"/><path d="M8 10V6h8v4" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                            </span>
+                            Villa
+                        </span>
+                    </div>
+                    <div class="property-footer">
+                        <div class="price">
+                            <div class="price-label">Price</div>
+                            <div class="price-value">$550,000</div>
+                        </div>
+                        <a href="#" class="btn btn-purple">View Property Details</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="featured-pagination">
+            <div class="featured-count">01 of 60</div>
+            <div class="featured-controls">
+                <button class="pager-btn" aria-label="Previous">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="pager-btn" aria-label="Next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php get_footer(); ?>
