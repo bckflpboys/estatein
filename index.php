@@ -353,4 +353,49 @@
     </div>
 </section>
 
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="featured-header">
+            <div class="featured-title-wrap">
+                <div class="sparkles">
+                    <span class="sparkle"></span>
+                    <span class="sparkle small"></span>
+                </div>
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.</p>
+            </div>
+            <a href="<?php echo get_permalink(get_page_by_path('faqs')); ?>" class="btn btn-outline">View All FAQ's</a>
+        </div>
+        <div class="faq-grid">
+            <article class="faq-card">
+                <h3 class="faq-title">How do I search for properties on Estatein?</h3>
+                <p class="faq-desc">Learn how to use our user-friendly search tools to find properties that match your criteria.</p>
+                <a href="#" class="faq-btn">Read More</a>
+            </article>
+            <article class="faq-card">
+                <h3 class="faq-title">What documents do I need to sell my property through Estatein?</h3>
+                <p class="faq-desc">Find out about the necessary documentation for listing your property with us.</p>
+                <a href="#" class="faq-btn">Read More</a>
+            </article>
+            <article class="faq-card">
+                <h3 class="faq-title">How can I contact an Estatein agent?</h3>
+                <p class="faq-desc">Discover the different ways you can get in touch with our experienced agents.</p>
+                <a href="#" class="faq-btn">Read More</a>
+            </article>
+        </div>
+        <div class="faq-divider"></div>
+        <div class="featured-pagination">
+            <div class="featured-count">01 of 10</div>
+            <div class="featured-controls">
+                <button class="pager-btn" aria-label="Previous">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="pager-btn" aria-label="Next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php get_footer(); ?>

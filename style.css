@@ -630,6 +630,60 @@ nav a.active {
     background-color: #262626;
 }
 
+.faq {
+    padding: 60px 0;
+    background-color: #141414;
+    border-top: 1px solid #262626;
+    border-bottom: 1px solid #262626;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.faq-card {
+    background-color: #0a0a0a;
+    border: 1px solid #262626;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.faq-desc {
+    color: #a3a3a3;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.faq-btn {
+    width: fit-content;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #262626;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.faq-btn:hover {
+    background-color: #262626;
+}
+
+.faq-divider {
+    border-top: 1px solid #262626;
+    margin: 28px 0;
+}
 .testimonials {
     padding: 60px 0;
     background-color: #141414;
@@ -806,6 +860,11 @@ footer {
     }
     
     .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .faq-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
