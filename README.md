@@ -64,7 +64,7 @@ estatein/
 To run this theme locally and test the functionality, follow these steps:
 
 ### Prerequisites
-You will need a local WordPress environment. We highly recommend [Local by Flywheel](https://localwp.com/) as it is the easiest to set up.
+You will need a local WordPress environment. I highly recommend [Local by Flywheel](https://localwp.com/) as it is the easiest to set up.
 
 ### Step 1: Install WordPress
 1. Open **Local**, click the **+** button to create a new site.

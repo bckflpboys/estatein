@@ -1,10 +1,10 @@
 /*
 Theme Name: Estatein
-Theme URI: https://example.com/estatein
-Author: Your Name
-Author URI: https://example.com
+Theme URI: https://devaura.co.za
+Author: Oratile Ntshekang
+Author URI: https://devaura.co.za
 Description: A custom WordPress theme for Estatein real estate website
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: estatein
@@ -985,16 +985,22 @@ nav a.active {
     
     .header-content {
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         gap: 0;
         flex-wrap: wrap;
+    }
+    
+    .logo {
+        margin-top: 4px;
+        order: 1;
     }
     
     nav, .contact-btn {
         display: none;
         width: 100%;
         margin-top: 16px;
+        order: 3;
     }
     
     nav ul {
@@ -1020,6 +1026,7 @@ nav a.active {
     .mobile-menu-toggle {
         display: flex;
         align-items: center;
+        order: 2;
     }
     
     .mobile-menu-toggle .icon-close {
@@ -1036,6 +1043,14 @@ nav a.active {
     
     .hero {
         padding: 40px 0;
+    }
+    
+    .hero-bg {
+        display: none;
+    }
+    
+    .hero-purple-glow {
+        display: none;
     }
     
     .hero-content {
@@ -1073,6 +1088,17 @@ nav a.active {
         margin-bottom: 20px;
         height: 400px;
         width: 100%;
+        background-color: #1a1a1a;
+        background-image: url('assets/images/line-background.png');
+        background-size: cover;
+        background-position: center;
+        border: 1px solid #262626;
+        border-radius: 12px;
+    }
+    
+    .hero-image-area img {
+        object-fit: contain;
+        object-position: bottom center;
     }
     
     .hero-circle-badge {
