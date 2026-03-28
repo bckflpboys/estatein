@@ -265,4 +265,92 @@
     </div>
 </section>
 
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="featured-header">
+            <div class="featured-title-wrap">
+                <div class="sparkles">
+                    <span class="sparkle"></span>
+                    <span class="sparkle small"></span>
+                </div>
+                <h2>What Our Clients Say</h2>
+                <p>Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.</p>
+            </div>
+            <a href="<?php echo get_permalink(get_page_by_path('testimonials')); ?>" class="btn btn-outline">View All Testimonials</a>
+        </div>
+        <div class="testimonial-grid">
+            <article class="testimonial-card">
+                <div class="stars">
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                </div>
+                <h3 class="testimonial-title">Exceptional Service!</h3>
+                <p class="testimonial-text">Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!</p>
+                <div class="testimonial-user">
+                    <img class="avatar" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=100&h=100&fit=crop&crop=faces" alt="Wade Warren">
+                    <div class="user-meta">
+                        <div class="user-name">Wade Warren</div>
+                        <div class="user-location">USA, California</div>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial-card">
+                <div class="stars">
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                </div>
+                <h3 class="testimonial-title">Efficient and Reliable</h3>
+                <p class="testimonial-text">Estatein provided us with top-notch service. They helped us sell our property quickly and at a great price. We couldn't be happier with the results.</p>
+                <div class="testimonial-user">
+                    <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=faces" alt="Emelie Thomson">
+                    <div class="user-meta">
+                        <div class="user-name">Emelie Thomson</div>
+                        <div class="user-location">USA, Florida</div>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial-card">
+                <div class="stars">
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                    <span class="star-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5D020"/></svg></span>
+                </div>
+                <h3 class="testimonial-title">Trusted Advisors</h3>
+                <p class="testimonial-text">The Estatein team guided us through the entire buying process. Their knowledge and commitment to our needs were impressive. Thank you for your support!</p>
+                <div class="testimonial-user">
+                    <img class="avatar" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100&h=100&fit=crop&crop=faces" alt="John Mans">
+                    <div class="user-meta">
+                        <div class="user-name">John Mans</div>
+                        <div class="user-location">USA, Nevada</div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="testimonials-divider"></div>
+        <div class="featured-pagination">
+            <div class="featured-count">01 of 10</div>
+            <div class="featured-controls">
+                <button class="pager-btn" aria-label="Previous">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="pager-btn" aria-label="Next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="sparkles bottom">
+            <span class="sparkle"></span>
+            <span class="sparkle small"></span>
+        </div>
+    </div>
+</section>
+
 <?php get_footer(); ?>
