@@ -96,6 +96,17 @@
     </div>
 </footer>
 
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const headerContent = document.querySelector('.header-content');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    headerContent.classList.toggle('nav-open');
+                });
+            }
+        });
+    </script>
     <?php wp_footer(); ?>
 </body>
